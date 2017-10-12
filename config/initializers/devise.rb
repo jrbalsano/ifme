@@ -304,6 +304,7 @@ Devise.setup do |config|
 
   Devise.setup do |config|
     config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
+    config.secret_key = '20243d91d67c7d055dac8c16a513058d9b871ca5f3a3cd2e13d945f9338ddd6d6bef08404b046e7b6727a6ab6316ede29fedb0d02b7143a6038652d382b5884d'
   end
 
   require 'omniauth-google-oauth2'

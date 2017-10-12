@@ -8,6 +8,13 @@ RUN apt-get update && apt-get -y install libpq-dev
 
 # If you require additional OS dependencies, install them here:
 # RUN apt-get update && apt-get -y install imagemagick nodejs
+RUN apt-get install -y apt-transport-https
+RUN apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
+RUN apt-get install -y nodejs
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get update && apt-get -y install yarn
 
 # Add Gemfile before rest of repo, for Docker caching purposes
 # See http://ilikestuffblog.com/2014/01/06/
